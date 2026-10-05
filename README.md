@@ -156,7 +156,6 @@ em{font-style:normal;color:var(--acc)}
     <div class="pt rise" style="--i:7"><div class="o">4</div><div><b>Traccia</b><span>Ogni intervento resta registrato.</span></div></div>
   </div>
 </section>
-
 </div>
 <div class="nav"><button id="p" aria-label="Precedente">‹</button><div class="dots" id="d"></div><button id="n" aria-label="Successivo">›</button></div>
 <script>
