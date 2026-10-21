@@ -1,0 +1,2 @@
+Per lo use Case 9 nel A2 bisogna far comparire all'amminastrore la lista degli interventi aperti e la lista dei responsabili attvi per aggiornare i referenti. Fino a che l'amminastrore non ha assegnato almeno un responsabile ad ogni intervento aperto lui non può proseguire.
+L'amministratore può eventualmente annulare l'operazione anche a questo passaggio, non vengono salvate modifiche e termine lo use case. Conviene fare uno use case a parte tipo "assegna interventi aperti" che estende lo use case 9 o lo lascio come flusso alternativo A2?
