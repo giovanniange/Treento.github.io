@@ -36,7 +36,7 @@ Convenzioni: nel flusso principale «Sistema» indica Treento. I flussi alternat
 **Eccezioni**
 - **E1 – Credenziali errate.** Al passo 4, se nome utente o password non sono corretti, il sistema mostra un messaggio di errore generico (senza indicare quale dato è errato), registra il tentativo fallito e torna al passo 2.
 - **E2 – Account bloccato per troppi tentativi.** Al passo 4, se si raggiunge il numero massimo di tentativi consecutivi falliti (RNF-07), il sistema blocca temporaneamente l'account e informa l'utente. Lo Use Case termina.
-- **E3 – Account disattivato.** Al passo 5, se l'account è disattivato, il sistema nega l'accesso e informa l'utente di rivolgersi all'amministratore. Lo Use Case termina.
+- **E3 – Account disattivato.** Al passo 5, se l'account è disattivato, il sistema nega l'accesso, mostra la motivazione di disattivazione (presentata dall'amministratore in UC-09) e informa l'utente di rivolgersi all'amministratore. Lo Use Case termina.
 
 ---
 
@@ -223,7 +223,7 @@ Convenzioni: nel flusso principale «Sistema» indica Treento. I flussi alternat
 
 **Eccezioni**
 - **E1 – Campi mancanti o non validi.** Al passo 4 il sistema evidenzia i campi da correggere e torna al passo 3.
-- **E2 – Email già registrata.** Al passo 4 il sistema segnala che esiste già un account con quell'email e non lo crea.
+- **E2 – Email già registrata.** Al passo 4 il sistema segnala che esiste già un account con quell'email e non lo crea, torna al passo 3.
 - **E3 – Invio della password non riuscito.** Al passo 5, se l'email non può essere inviata, l'account viene creato ma il sistema lo segnala e consente di ripetere l'invio dal dettaglio dell'account.
 
 ---
@@ -252,6 +252,7 @@ Convenzioni: nel flusso principale «Sistema» indica Treento. I flussi alternat
 **Flussi alternativi**
 - **A1 – Reimpostazione della password.** Al passo 1 l'amministratore seleziona «Reimposta password»; il sistema genera una nuova password temporanea, la invia all'utente e invalida quella precedente.
 - **A2 – Modifica del proprio account.** Se l'amministratore tenta di togliere a sé stesso il ruolo di amministratore ed è l'unico amministratore attivo, il sistema impedisce l'operazione e lo segnala.
+- **A3 – Annullamento.** Al passo 3 l'amministratore annulla; nessun account viene modificato. Lo Use Case termina.
 
 **Eccezioni**
 - **E1 – Dati non validi o email già in uso.** Al passo 4 il sistema evidenzia l'errore e torna al passo 3.
@@ -281,7 +282,7 @@ Convenzioni: nel flusso principale «Sistema» indica Treento. I flussi alternat
 
 **Flussi alternativi**
 - **A1 – Riattivazione.** Al passo 1, su un account disattivato o bloccato, l'amministratore seleziona «Riattiva»; il sistema riattiva l'account, gli assegna una nuova password temporanea e la invia all'utente.
-- **A2 – Interventi in carico.** Al passo 2, se l'utente è indicato come referente di interventi aperti, il sistema lo segnala, affinché i referenti vengano aggiornati.
+- **A2 – Interventi in carico.** Al passo 2, se l'utente è indicato come referente di interventi aperti, il sistema lo segnala, affinché vengano assegnati gli interventi aperti ad altri responsabili presenti nel sistema.
 
 **Eccezioni**
 - **E1 – Ultimo amministratore.** Se l'account è l'unico amministratore attivo, il sistema impedisce la disattivazione.
